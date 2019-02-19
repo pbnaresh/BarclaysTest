@@ -56,10 +56,11 @@ namespace FileData
         {
             bool isValidated = true;
             IConfigSettings configSettings = new ConfigSettings(); //this can be injected if DI is implemented to follow SINGLE RESPONSIBILITY PRINCIPLE 
-            if (configSettings.GetConfigValuesByKey(SIZE_FORMATS).IndexOf(sizeOrVersionFormat) > -1)
+
+            if (Array.IndexOf(configSettings.GetConfigValuesByKey(SIZE_FORMATS),sizeOrVersionFormat)>-1)
                 outSizeOrVersion = SIZE;
 
-            else if (configSettings.GetConfigValuesByKey(VERSION_FORMATS).IndexOf(sizeOrVersionFormat) > -1)
+            else if (Array.IndexOf(configSettings.GetConfigValuesByKey(VERSION_FORMATS),sizeOrVersionFormat)>-1)
                 outSizeOrVersion = VERSION;
             else
             {

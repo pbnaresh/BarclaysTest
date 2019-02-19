@@ -9,6 +9,6 @@ namespace FileData
     //create this for referring in DI if implemented and make it loosly coupled 
      interface IConfigSettings
     {
-        string GetConfigValuesByKey(string configKey);
+        string[] GetConfigValuesByKey(string configKey);
     }
 }
